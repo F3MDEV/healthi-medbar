@@ -10,10 +10,10 @@ import { makeStyles } from "@material-ui/core";
 import DuplicateIcon from './../src/duplicate.svg';
 
 export interface HealthiMedBarProps {
-    majorButtons?: string;
-    keyArea?: any;
-    costArea?: any;
-    toolbarClasses?: any;
+    majorButtons?: React.ReactNode;;
+    keyArea?: React.ReactNode;;
+    costArea?: React.ReactNode;;
+    toolbarClasses?: string;
   }
 
 const useStyles = makeStyles(() => ({
