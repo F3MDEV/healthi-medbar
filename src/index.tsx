@@ -10,9 +10,21 @@ import { makeStyles } from "@material-ui/core";
 import DuplicateIcon from './../src/duplicate.svg';
 
 export interface HealthiMedBarProps {
-    majorButtons?: React.ReactNode;;
-    keyArea?: React.ReactNode;;
-    costArea?: React.ReactNode;;
+    /**
+     * Insert the "big" buttons.
+     */
+    majorButtons?: React.ReactNode;
+    /**
+     * Key area section.
+     */
+    keyArea?: React.ReactNode;
+    /**
+     * Cost area section.
+     */
+    costArea?: React.ReactNode;
+    /**
+     * Classes of the toolbar
+     */
     toolbarClasses?: string;
   }
 
