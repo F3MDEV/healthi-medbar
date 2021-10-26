@@ -1,3 +1,5 @@
+import 'typeface-roboto-condensed';
+import "@fontsource/open-sans";
 import * as React from 'react';
 import { FunctionComponent } from 'react';
 
@@ -28,7 +30,16 @@ export interface HealthiMedBarProps {
     toolbarClasses?: string;
   }
 
-const useStyles = makeStyles(() => ({
+const HealthiMedBar: FunctionComponent<HealthiMedBarProps> = ({
+    majorButtons = <>
+      <Button color="primary" style={{paddingRight: '1.5rem', paddingLeft: '1.5rem', marginRight: '0.5rem', textTransform: 'uppercase'}}>Delete</Button>
+      <Button color="primary" variant="contained" style={{paddingRight: '1.5rem', paddingLeft: '1.5rem', marginRight: '0.5rem', textTransform: 'uppercase'}}><img src={DuplicateIcon} style={{marginRight: '0.5rem'}}/>Duplicate</Button>
+    </>,
+    keyArea = "Chave 16",
+    costArea = "5000€",
+    toolbarClasses
+}) => {
+  const useStyles = makeStyles(() => ({
   root:{
       "&.MuiToolbar-root":{
         background: "#f2f2f2",
@@ -51,7 +62,8 @@ const useStyles = makeStyles(() => ({
   costText:{
       fontFamily: 'Open Sans',
       fontSize: 16,
-      display: 'flex'
+      display: 'flex',
+      marginLeft: '0.5rem'
   },
   digitalKey:{
       fontFamily: 'Roboto Condensed',
@@ -74,17 +86,6 @@ const useStyles = makeStyles(() => ({
 }));
 
 const classes = useStyles();
-
-const HealthiMedBar: FunctionComponent<HealthiMedBarProps> = ({
-    majorButtons = <>
-      <Button color="primary" className={`${classes.textUppercase} ${classes.px4} ${classes.mr2}`}>Delete</Button>
-      <Button color="primary" variant="contained" className={`${classes.textUppercase} ${classes.px4} ${classes.mr2}`}><img src={DuplicateIcon} className={classes.mr2}/>Duplicate</Button>
-    </>,
-    keyArea = "Chave 16",
-    costArea = "5€",
-    toolbarClasses
-}) => {
-  
     return (
       <>
         <Toolbar disableGutters className={`${classes.root} ${toolbarClasses}`}>

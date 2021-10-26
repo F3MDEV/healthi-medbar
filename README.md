@@ -115,7 +115,7 @@ ReactDOM.render(<App />, document.querySelector("#app"));
         </div>
       </td>
       <td>
-        <span>"5€"</span>
+        <span>"5000€"</span>
       </td>
     </tr>
     <tr>

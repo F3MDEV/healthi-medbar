@@ -13,6 +13,8 @@ function ___$insertStyle(css) {
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
+require('typeface-roboto-condensed');
+require('@fontsource/open-sans');
 var React = require('react');
 var Toolbar = require('@material-ui/core/Toolbar');
 var Button = require('@material-ui/core/Button');
@@ -46,9 +48,9 @@ var img = "data:image/svg+xml,%3csvg version='1.2' xmlns='http://www.w3.org/2000
 
 var HealthiMedBar = function (_a) {
     var _b = _a.majorButtons, majorButtons = _b === void 0 ? React__namespace.createElement(React__namespace.Fragment, null,
-        React__namespace.createElement(Button__default["default"], { color: "primary", className: "text-uppercase px-4 mr-2" }, "Delete"),
-        React__namespace.createElement(Button__default["default"], { color: "primary", variant: "contained", className: "text-uppercase px-4 mr-2" },
-            React__namespace.createElement("img", { src: img, className: "mr-2" }),
+        React__namespace.createElement(Button__default["default"], { color: "primary", style: { paddingRight: '1.5rem', paddingLeft: '1.5rem', marginRight: '0.5rem', textTransform: 'uppercase' } }, "Delete"),
+        React__namespace.createElement(Button__default["default"], { color: "primary", variant: "contained", style: { paddingRight: '1.5rem', paddingLeft: '1.5rem', marginRight: '0.5rem', textTransform: 'uppercase' } },
+            React__namespace.createElement("img", { src: img, style: { marginRight: '0.5rem' } }),
             "Duplicate")) : _b, _c = _a.keyArea, keyArea = _c === void 0 ? "Chave 16" : _c, _d = _a.costArea, costArea = _d === void 0 ? "5€" : _d, toolbarClasses = _a.toolbarClasses;
     var useStyles = core.makeStyles(function () { return ({
         root: {
@@ -73,18 +75,34 @@ var HealthiMedBar = function (_a) {
         costText: {
             fontFamily: 'Open Sans',
             fontSize: 16,
+            display: 'flex',
+            marginLeft: '0.5rem'
         },
         digitalKey: {
             fontFamily: 'Roboto Condensed',
             fontSize: 12,
+            display: 'flex'
         },
+        dFlex: {
+            display: 'flex'
+        },
+        textUppercase: {
+            textTransform: 'uppercase',
+        },
+        px4: {
+            paddingRight: '1.5rem',
+            paddingLeft: '1.5rem'
+        },
+        mr2: {
+            marginRight: '0.5rem'
+        }
     }); });
     var classes = useStyles();
     return (React__namespace.createElement(React__namespace.Fragment, null,
-        React__namespace.createElement(Toolbar__default["default"], { disableGutters: true, className: classes.root + " " + toolbarClasses + "  " },
-            React__namespace.createElement("div", { className: "d-flex " + classes.costText }, costArea),
-            React__namespace.createElement("div", { className: "d-flex " + classes.digitalKey }, keyArea),
-            React__namespace.createElement("div", { className: "d-flex" }, majorButtons))));
+        React__namespace.createElement(Toolbar__default["default"], { disableGutters: true, className: classes.root + " " + toolbarClasses },
+            React__namespace.createElement("div", { className: "" + classes.costText }, costArea),
+            React__namespace.createElement("div", { className: "" + classes.digitalKey }, keyArea),
+            React__namespace.createElement("div", { className: "" + classes.dFlex }, majorButtons))));
 };
 
 exports["default"] = HealthiMedBar;
